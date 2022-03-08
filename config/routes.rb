@@ -27,6 +27,9 @@ Rails.application.routes.draw do
       resources :likes
     end
 
+    resources :topics, except: [:index, :show, :update, :create, :destroy] do
+      resources :comments
+    end
 
   end
 
